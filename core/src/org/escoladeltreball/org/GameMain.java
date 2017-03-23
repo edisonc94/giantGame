@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class mainGame extends Game {
+public class GameMain extends Game {
 
     //UN SPRITEBATCH POR GAME
     private SpriteBatch batch;
@@ -29,7 +29,7 @@ public class mainGame extends Game {
         this.setScreen(new MainMenu(this));
 //        img = new Texture("7 - Backgrounds/Game BG.png");
 //        player1 = new Texture("0 - Player/Player 1.png");
-
+    setScreen(new GamePlay(this));
 
     }
 

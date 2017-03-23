@@ -1,14 +1,11 @@
 package org.escoladeltreball.org;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -23,7 +20,7 @@ import com.badlogic.gdx.physics.box2d.World;
  */
 
 public class MainMenu implements Screen, ContactListener {
-    private mainGame game;
+    private GameMain game;
     private Texture bg;
     private Player player;
     private Cloud c;
@@ -33,7 +30,7 @@ public class MainMenu implements Screen, ContactListener {
     private OrthographicCamera camera;
     private Box2DDebugRenderer debugRenderer;
 
-    public MainMenu(mainGame game) {
+    public MainMenu(GameMain game) {
         this.game = game;
         camera = new OrthographicCamera();
         camera.setToOrtho(false,GameInfo.WIDTH/GameInfo.PPM,GameInfo.HEIGHT/GameInfo.PPM);
@@ -49,8 +46,8 @@ public class MainMenu implements Screen, ContactListener {
         player = new Player(world, "0 - Player/Player 1.png", GameInfo.HALF_WIDTH, GameInfo.HALF_HEIGHT+250);
 
 
-        c = new Cloud(world,"4 - Clouds/Cloud 1.png", GameInfo.HALF_WIDTH+30,GameInfo.HALF_HEIGHT);
-        c2 = new Cloud(world,"4 - Clouds/Cloud 2.png", GameInfo.HALF_WIDTH-100,GameInfo.HALF_HEIGHT+300);
+        c = new Cloud(world,"4 - Clouds/Cloud 1.png","nube1", GameInfo.HALF_WIDTH+30,GameInfo.HALF_HEIGHT);
+        c2 = new Cloud(world,"4 - Clouds/Cloud 2.png","nube2", GameInfo.HALF_WIDTH-100,GameInfo.HALF_HEIGHT+300);
 
 
 

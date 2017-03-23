@@ -17,14 +17,25 @@ public class Cloud extends Sprite {
 
     private World world;
     private Body body;
+    private String cloudName;
 
-    public Cloud(World world, String name, float x, float y) {
+    public Cloud(World world, String name,String cloudName, float x, float y) {
         super(new Texture(name));
         this.world = world;
+        this.cloudName = cloudName;
         this.setPosition(
                 x - this.getWidth() / 2,
                 y - this.getHeight() / 2);
         createBody();
+    }
+
+    public void setSpritePosition(float x, float y){
+        setPosition(x,y);
+        createBody();
+    }
+
+    public String getCloudName() {
+        return cloudName;
     }
 
     void createBody() {

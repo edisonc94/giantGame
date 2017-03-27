@@ -23,9 +23,10 @@ public class Cloud extends Sprite {
         super(new Texture(name));
         this.world = world;
         this.cloudName = cloudName;
-        this.setPosition(
-                x - this.getWidth() / 2,
-                y - this.getHeight() / 2);
+//        this.setPosition(
+//                x - this.getWidth() / 2,
+//                y - this.getHeight() / 2);
+        setSpritePosition(x,y);
         createBody();
     }
 
@@ -49,7 +50,7 @@ public class Cloud extends Sprite {
         body = world.createBody(bodyDef);
 
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox((getWidth()/2)/GameInfo.PPM,(getHeight()/2)/GameInfo.PPM);
+        shape.setAsBox((getWidth()/2)/GameInfo.PPM-0.18f,(getHeight()/2)/GameInfo.PPM);
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;

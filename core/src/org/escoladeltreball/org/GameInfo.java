@@ -10,5 +10,6 @@ public class GameInfo {
     public static final int HALF_WIDTH = 480/2;
     public static final int HALF_HEIGHT = 800/2;
     public static final int PPM = 100;
+    public static final float GRAVITY = -9.8f;
 
 }
